@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="main-nav navbar">
       <Link to="/" className="nav-logo-text">
-        <h4 className="text-primary">ViaCEP API Interface</h4>
+        <h4 className="text-primary"></h4> 
       </Link>
     </nav>
   );

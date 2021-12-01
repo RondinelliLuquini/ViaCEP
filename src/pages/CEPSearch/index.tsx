@@ -4,10 +4,14 @@ import ResultCard from 'components/ResultCard';
 import { useState } from 'react';
 import { Address } from './SearchTypes/ApiJsonType';
 import axios from 'axios';
+import { BrowserRouter } from 'react-router-dom';
+
 
 type FormData = {
   zip: string;
 };
+
+
 
 const CEPSearch = () => {
   const [address, setAddress] = useState<Address>();
@@ -39,14 +43,14 @@ const CEPSearch = () => {
 
   return (
     <div className="zip-search-container">
-      <h1 className="text-primary">CEP Search</h1>
+      <h1 className="text-primary">Onde você mora ?</h1>
       <div className="search-container container">
         <form onSubmit={submissionHandler}>
           <div className="form-container">
             <input
               type="text"
               className="search-input"
-              placeholder="CEP (Brazilian ZIP Code - Numbers Only)"
+              placeholder="Informe seu CEP"
               name="zip"
               value={formData.zip}
               onChange={changeHandler}
@@ -54,13 +58,14 @@ const CEPSearch = () => {
             <button type="submit" className="search-button btn btn-primary">
               Buscar
             </button>
+           
           </div>
         </form>
         {address && (
           <>
-            <ResultCard title="State" description={address.uf} />
-            <ResultCard title="City" description={address.localidade} />
-            <ResultCard title="Address" description={address.logradouro} />
+            <ResultCard title="Estado" description={address.uf} />
+            <ResultCard title="Cidade" description={address.localidade} />
+            <ResultCard title="Endereço" description={address.logradouro} />
           </>
         )}
       </div>
@@ -69,3 +74,5 @@ const CEPSearch = () => {
 };
 
 export default CEPSearch;
+
+

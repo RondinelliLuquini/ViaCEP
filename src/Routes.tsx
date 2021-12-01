@@ -5,7 +5,7 @@ import CEPSearch from 'pages/CEPSearch';
 
 const Routes = () => (
   <BrowserRouter>
-    <Navbar />
+    {/* <Navbar /> */}
     <Switch>
       <Route path="/" exact>
         <Home />
