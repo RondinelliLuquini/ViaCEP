@@ -66,6 +66,9 @@ const CEPSearch = () => {
             <ResultCard title="Estado" description={address.uf} />
             <ResultCard title="Cidade" description={address.localidade} />
             <ResultCard title="Endereço" description={address.logradouro} />
+            <ResultCard title="Bairro" description={address.bairro} />
+            
+            
           </>
         )}
       </div>
